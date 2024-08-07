@@ -10,7 +10,7 @@
 - (Optional) Arduino/Teensy/Pi microcontroller for syncing cameras and other devices
 
 ## Installation
-1. Update graphics drivers
+1. Update graphics drivers. For windows users access "Device Manager", Mac user N/A
 2. Create and activate a new Python 3.7 Anaconda environment:
 ```
 conda create -n campy python=3.7 imageio-ffmpeg matplotlib -c conda-forge
@@ -18,12 +18,14 @@ conda activate campy
 pip install -U setuptools
 ```
 3. Install camera software
-- If using Basler cameras, install Pylon software:
+- If using Basler cameras, install Pylon software(https://docs.baslerweb.com/software-installation):
   - Install Basler Pylon with Developer options
   - Install pypylon:
   Windows:
   ```
   pip install pypylon
+  conda install -c conda-forge papylon
+
   ```
   Linux:
   ```
@@ -31,6 +33,10 @@ pip install -U setuptools
   git clone https://github.com/basler/pypylon.git
   python ./pypylon/setup.py install
   ```
+  Mac:
+   ```
+   pip install papylon
+   conda install -c conda-forge papylon
   
 - If using FLIR cameras:
   - Download and install Spinnaker SDK and SpinView software from FLIR's website: 
